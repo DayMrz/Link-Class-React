@@ -29,9 +29,14 @@ class Machine extends React.Component {
   }
 
   render() {
-    const { slots } = this.state
-    const { play } = this
-    const { onDelete } = this.props
+    // const { slots } = this.state
+    // const { play } = this
+    // const { onDelete } = this.props
+    const {
+      play,
+      props: { onDelete },
+      state: { slots }
+    } = this
 
     if (slots.length <= 1) {
       return null

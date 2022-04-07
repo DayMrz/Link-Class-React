@@ -117,9 +117,9 @@ class App extends React.Component {
 
         <input
           type="number"
-          onChange={(event) => {
+          onChange={({ target: { value }}) => {
             this.setState(() => {
-              let slots = parseInt(event.target.value)
+              let slots = parseInt(value)
 
               if (slots < 2) {
                 slots = 2
