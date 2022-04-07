@@ -1,18 +1,23 @@
-import React, {Component} from 'react'
-import Header from './components/Header.js'
+import React, { useState } from 'react'
+import Header from './components/Header'
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <p>
-          holi      
-        </p>
-      </div>
-    );
-  }
+function App() {
+  const [mode, setMode] = useState('dark');
+
+  return (
+    <div className={`App ${mode}`}>
+      <Header
+        mode={mode}
+        toggleTheme={() => {
+          setMode(currentMode => currentMode === 'dark' ? 'light' : 'dark');
+        }}
+      />
+      <p>
+        holi
+      </p>
+    </div>
+  );
 }
 
 export default App;
